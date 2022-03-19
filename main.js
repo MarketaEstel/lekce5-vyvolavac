@@ -45,11 +45,19 @@ function tahnoutJmeno() {
     jmena.splice(vyherniIndex, 1);
     
     // Výherní jméno si uložíme do pole k ostatním výherním
-    tazenaJmena.push(vyherniJmeno);
+    tazenaJmena.unshift(vyherniJmeno);
 
     let vyherce = document.querySelector("#vyherka");
     vyherce.textContent = vyherniJmeno;
 
     let seznam = document.querySelector("#seznam");
-    seznam.textContent = tazenaJmena;
+    seznam.textContent = tazenaJmena; 
+
+    let pocetTazenych = document.querySelector("#pocitadlo");
+    pocetTazenych.textContent = tazenaJmena.length;
+}
+
+function restartPocitadla() {
+console.log ("restartPocitadlo");
+location.reload()
 }
